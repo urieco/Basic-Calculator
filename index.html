@@ -1,3 +1,8 @@
+<!-- *****
+Credit: 
+Font: Digital-7 by Style-7 (https://www.fontspace.com/style-7) 
+***** -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +17,17 @@
 
 <body>
     <div class="calculator">
-        <div id="display-monitor"></div>
+        <div id="display-monitor">
+            <div class=previous-equation>12 x 45 x 10^6 + - /</div>
+            <div class="current-result">540,000,000</div>
+            <!-- Maximum: 9-digit numbers; -->
+        </div>
         <div class="input-field">
-            <button class="backspace">Back</button>
+            <audio src="./sounds/input.wav"></audio>
+            <button class="clear">C</button>
+            <button class="backspace">&#9003;</button>
             <button class="divide">/</button>
-            <button class="multiply">*</button>
+            <button class="multiply">X</button>
             <button class="subtract">-</button>
             <button class="add">+</button>
             <button class="seven">7</button>

@@ -1,3 +1,23 @@
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => button.addEventListener("mouseenter",
+    (e) => button.classList.toggle("hovered")));
+buttons.forEach(button => button.addEventListener("mouseleave",
+    (e) => button.classList.toggle("hovered")));
+
+buttons.forEach(button => button.addEventListener("click",
+    (e) => {
+        button.classList.add("clicked");
+        playSound();
+        setTimeout((() => button.classList.remove("clicked")), 110)
+    }));
+
+function playSound() {
+    const audio = document.querySelector("audio");
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+}
+
 const addition = function (num1, num2) {
     return num1 + num2;
 };
@@ -23,13 +43,12 @@ const operate = function (num1, operator, num2) {
         case "subtract":
             return subtraction(num1, num2);
             break;
-        case "multiply": 
+        case "multiply":
             return multiplication(num1, num2);
             break;
-        case "divide": 
+        case "divide":
             return division(num1, num2);
             break;
     }
 };
 
-operate(98, "divide", 3);
