@@ -32,7 +32,7 @@ body {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    animation: 0.5s ease-in-out appearing;
+    /* animation: 0.5s ease-in-out appearing; */
 }
 
 @keyframes appearing {
@@ -47,34 +47,50 @@ body {
     }
 }
 
-.previous-equation,
-.current-result {
-    color: #0d123a;
-    text-align: right;
-    font-family: "digital-7regular", 'Times New Roman', Times, serif;
-}
-
 #display-monitor {
     background-color: #7ca4a7;
     width: 380px;
     height: 125px;
-    padding: 5px 5px 0 0;
+    padding: 5px 0;
     border: 5px solid black;
     margin-bottom: 10px;
     border-radius: 5%;
-    box-shadow: inset 5px 5px 1px;
+    box-shadow: inset 5px 5px 1px rgba(0, 0, 0, 0.7);
+    position: relative;
 }
 
-.previous-equation {
+.previous-display,
+.current-display,
+.operator {
+    direction:rtl;
+    text-align: right;
+    color: #0d123a;
+    font-family: "digital-7regular", 'Times New Roman', Times, serif;
+    position: absolute;
+    width: 100%;
+}
+
+.previous-display {
     opacity: 0.8;
-    margin-top: 6px;
     font-size: 32px;
     font-weight: 100;
+    top: 15%;
+    left: -5%;
 }
 
-.current-result {
+.current-display {
     font-size: 76px;
     font-weight: 700;
+    top: 40%;
+    left: -5%;
+}
+
+.operator {
+    width: 16px;
+    height: 30px;
+    font-size: 36px;
+    top: 55%;
+    left: 95.5%;
 }
 
 .input-field {
