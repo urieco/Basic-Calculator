@@ -62,7 +62,6 @@ body {
 .previous-display,
 .current-display,
 .operator {
-    direction:rtl;
     text-align: right;
     color: #0d123a;
     font-family: "digital-7regular", 'Times New Roman', Times, serif;
