@@ -22,13 +22,13 @@ General Outline:
 5. Wire the operate() with "=" key. 
     - Update the display with result.
 
-**To Do**
-
 6. User should be able to string together several operations and get the right answer, with **each pair of numbers being evaluated at a time**. 
     - Pressing any more operator key after the input of two operands and their operator will result in operate() being executed. 
     - Clear should wipe out any existing data.
     - Display a snarky error message if the user tries to divide by 0.
     - If the result exceeds 9 digit numbers, throws an error
+
+**To Do**
 
 Extra Credit: 
 - Users can get floating point numbers if they do the math required to get one, but they can't type them in yet. Add a '.' button and let users input decimals. Make sure to not allow them to type more than one. 
