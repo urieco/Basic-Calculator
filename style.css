@@ -32,7 +32,7 @@ body {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    /* animation: 0.5s ease-in-out appearing; */
+    animation: 0.5s ease-in-out appearing;
 }
 
 @keyframes appearing {
@@ -205,7 +205,11 @@ button {
 }
 
 .zero {
-    grid-area: 5/1/6/3;
+    grid-area: 5/2/6/3;
+}
+
+.negative-sign {
+    grid-area: 5/1/6/2;
 }
 
 .decimal {

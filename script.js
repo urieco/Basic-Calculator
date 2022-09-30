@@ -100,6 +100,20 @@ function getOperator() {
         });
 }
 
+const negativeSign = document.querySelector(".negative-sign");
+negativeSign.addEventListener("click", assignNegative);
+
+function assignNegative() {
+    if (currentDisplay.textContent[0] === "-") {
+        currentDisplay.textContent = currentDisplay.textContent.replace("-", "");
+    } else if ((typeof +currentDisplay.textContent === "number" &&
+        +currentDisplay.textContent > 0)
+        || currentDisplay.textContent == "") {
+        currentDisplay.textContent = "-".concat(currentDisplay.textContent);
+    }
+}
+
+
 // ** Get Result **//
 //Pressing the equal symbol will register num2 and output the answer
 const equalBtn = document.querySelector(".equal");
@@ -240,5 +254,3 @@ function clearScreen() {
     result = null;
     decimalCheck = [];
 }
-
-
