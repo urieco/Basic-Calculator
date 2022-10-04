@@ -1,7 +1,7 @@
 # Basic-Calculator
 An on-screen calculator that executes one function at a time.
 
-**Finished**
+**Finished** (All the required features have been added).
 
 General Outline: 
 1. The calculator contains functions for all of the basic math operators you typically find on simple calculators:
@@ -28,14 +28,13 @@ General Outline:
     - Display a snarky error message if the user tries to divide by 0.
     - If the result exceeds 9 digit numbers, throws an error
 
-**To Do**
-
 Extra Credit: 
 - Users can get floating point numbers if they do the math required to get one, but they can't type them in yet. Add a '.' button and let users input decimals. Make sure to not allow them to type more than one. 
 - Decorate the calculator.
 - Add a "backspace" button, so the user can undo if they click the wrong number. 
 - Add keyboard support!
 
+**To Do**
 
 Future plans: 
 - Instead of throwing an error for large numbers, use 10^n to express the result, round up numbers with a lot of decimals.

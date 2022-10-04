@@ -22,7 +22,8 @@ function playSound() {
 // ** Inputting Numbers **//
 let num1 = 0,
     num2 = 0;
-//result's initial value or fallback value can't be anything other than "null" since "null" can be used for calculating and as a condition (compared to "undefined").
+//result's initial value or fallback value can't be anything other than "null" 
+//since "null" can be used for calculating and as a condition (compared to "undefined").
 let result = null,
     gotOperator = false,
     maxLengthDisplay = 9;
@@ -36,7 +37,8 @@ displayMonitor.appendChild(previousDisplay);
 displayMonitor.appendChild(currentDisplay);
 displayMonitor.appendChild(operator);
 
-const numpad = document.querySelectorAll(".one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .decimal");
+const numpad = document.querySelectorAll
+    (".one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .decimal");
 numpad.forEach(numKey => numKey.addEventListener("click", inputNumber));
 
 function inputNumber() {
@@ -66,8 +68,11 @@ function inputNumber() {
         result = null;
     }
 
-    //While max length dipslay is 9, the if statement can only check the current length after inputting the 9th digit or character, hence the "<"
-    if (currentDisplay.textContent.length < maxLengthDisplay) currentDisplay.textContent += this.textContent;
+    //While max length dipslay is 9, the if statement can only check the current length 
+    //after inputting the 9th digit or character, hence the "<"
+    if (currentDisplay.textContent.length < maxLengthDisplay) {
+        currentDisplay.textContent += this.textContent;
+    }
 }
 
 
@@ -148,7 +153,8 @@ function getResult() {
                 if (resultString.length >= maxLengthDisplay) {
                     return currentDisplay.textContent = "OVERLOAD";
                 } else {
-                    currentDisplay.textContent = floatingPointCorrection(result, operator.textContent, decimalCheck[2]);
+                    currentDisplay.textContent =
+                        floatingPointCorrection(result, operator.textContent, decimalCheck[2]);
                 }
             })
             .then(() => {
@@ -254,3 +260,27 @@ function clearScreen() {
     result = null;
     decimalCheck = [];
 }
+
+// ** Keyboard Support **//
+function keyPressed(e) {
+    if (typeof +e.key == "number" || e.key === ".") {
+        numpad.forEach(numKey => {
+            if (numKey.textContent == e.key) numKey.click();
+        })
+    }
+
+    if (/[+\-*\/]/.test(e.key)) {
+        symbols.forEach(symbol => {
+            if (symbol.textContent == e.key) symbol.click();
+            if (symbol.textContent == "X" && e.keyCode == 106) symbol.click();
+        })
+    }
+
+    if (e.key == "Backspace") backspace.click();
+
+    if (e.keyCode == 27 || e.keyCode == 46) clearBtn.click();
+
+    if (e.key === "=" || e.key == "Enter") equalBtn.click();
+}
+
+document.addEventListener("keydown", keyPressed);
